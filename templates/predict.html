@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MetaGesture</title>
+    <meta charset="utf-8">
+    <meta name= "viewport" content="initial-scale=1" width="device-width">
+    <link rel="stylesheet" type="text/css" href="/static/base.css">
+    <link rel="icon" href="/images/logo.png">
+    <meta property="og:image" src="/static/logo.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="640">
+    <meta property="og:image:height" content="480">
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="MetaGesture">
+    <meta property="og:description" content="Get Stats for your Youtube Music and Share with your friends">
+    <meta name="keywords" content=" ASL,ISL,Sign,Language,Communication">
+    <meta name="author" content="Rohit D">
+</head>
+<body>
+    <div class="top col-lg-12 col-md-12 col-sd-12">
+        <div class="col-lg-4 col-md-3 col-sd-12">
+            <div class="theplaylist">
+            <button class="butnoob"><a class="butnooblink" href="/">RTCS</a></button>
+            </div>
+        </div>
+        <div class="navbut col-lg-4 col-md-1 col-sd-3">
+            <div class="navbuts navbuts1">   
+                <a class="navname"></a> 
+            </div>
+        </div>
+        <div class="navbut col-lg-1 col-md-2 col-sd-3">
+            <div class="navbuts navbuts1">
+            <a class="navname" href="/">Home</a>
+            </div>
+        </div>
+        <div class="navbut col-lg-1 col-md-2 col-sd-2"> 
+            <div class="navbuts">
+            <a class="navname" href="/asl">ASL</a>
+            </div>
+        </div>
+        <div class="navbut col-lg-1 col-md-2 col-sd-2">
+            <div class="navbuts">
+            <a class="navname" href="/predict">Predict</a>
+            </div>
+        </div>
+        <div class="navbut col-lg-1 col-md-2 col-sd-2">
+            <div class="navbuts">
+            <a class="navname" href="/login">Login</a>
+            </div>
+        </div>
+    </div>
+    <div class="mainbody">
+        <link rel="stylesheet" type="text/css" href="static/predict.css">
+        <img src="{{ url_for('video_feed') }}" style=" margin-left:100px; width: 80%;height: 80%;color: rgb(255,255,255);text-align: center;font-size: 20px;"
+        alt="Camera Access Not Provided!">
+        {% if session.loggedin %}
+        <h2>Hi {{session.username}}</h2>
+        {% else %}
+        <h2>Login to get better experience and help improve website</h2>
+        {% endif %}
+    </div>
+    <div id="footer"> 
+        <a target="_blank" class="linkedinname" href="https://www.linkedin.com/in/rohit-d-898384211/">
+        Designed by Rohit D <img class="linkedin" src="/static/linkedin.png">
+        </a>
+    </div>
+</body>
+</html>
