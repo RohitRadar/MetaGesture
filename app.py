@@ -10,14 +10,17 @@ from flask_mysqldb import MySQL
 import MySQLdb.cursors
 import re
 
+
+
+app = Flask(__name__)
 app.secret_key = 'your secret key'
  
 app.config['MYSQL_HOST'] = 'localhost'
 app.config['MYSQL_USER'] = 'root'
 app.config['MYSQL_PASSWORD'] = '12345678'
 app.config['MYSQL_DB'] = 'geeklogin'
+mysql = MySQL(app)
 
-app = Flask(__name__)
 @app.route('/')
 def index():
 	return render_template('home.html')
@@ -83,7 +86,7 @@ def register():
         msg = 'Please fill out the form !'
     return render_template('register.html', msg = msg)
 
-model=load_model('C:/Users/rohit/OneDrive/Desktop/VII/IBM-Project-19465-1659698319/Project Development Phase/Sprint 2/asl.h5')
+model=load_model('C:/Users/rohit/OneDrive/Desktop/Hobby/Finish/IBM-Project-19465-1659698319/Project Development Phase/Sprint 2/asl.h5')
 def gen(video):
     while True:
         success, image = video.read()
