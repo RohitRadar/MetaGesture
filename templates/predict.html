@@ -45,7 +45,11 @@
         </div>
         <div class="navbut col-lg-1 col-md-2 col-sd-2">
             <div class="navbuts">
-            <a class="navname" href="/login">Login</a>
+                {% if session.loggedin %}
+                <a class="navname" href="/logout">Logout</a>
+                {% else %}
+                <a class="navname" href="/login">Login</a>
+                {% endif %}
             </div>
         </div>
     </div>
